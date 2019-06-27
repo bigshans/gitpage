@@ -5,6 +5,7 @@ tags:
 - algorithm
 categories:
 - algorithm
+mathjax: true
 ---
 
 我的 ACM 线段树模板。

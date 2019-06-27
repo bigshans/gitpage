@@ -7,6 +7,7 @@ tags:
 - dp
 categories:
 - algorithm
+mathjax: true
 ---
 
 最长上升子序列模板。以 poj 3903 为例。
