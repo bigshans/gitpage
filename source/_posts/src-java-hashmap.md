@@ -11,7 +11,7 @@ categories:
 对以下一段代码进行 Debug，阅读建议边 Debug 边看。
 
     import java.util.HashMap;
-
+    
     public class Collec {
         public static void main(String[] args) {
             HashMap a = new HashMap();
@@ -22,11 +22,11 @@ categories:
 
 <!--more-->
 
-继承关系
+## 继承关系
 
 HashMap <- AbstractMap <- Map 。
 
-初始化
+## 初始化
 
 这里会调用初始化代码。
 
@@ -36,7 +36,7 @@ HashMap <- AbstractMap <- Map 。
 
 DEFAULT_LOAD_FACTOR默认是0.75。我们可以看到，在这里 HashMap 并没有初始化空间。
 
-put 方法
+## put 方法
 
 我们一步一步地来看。
 
@@ -84,7 +84,7 @@ evict，为 false时，表格处于创建模式。用不到，暂时不用理解
 
 由于 table 表在构造时没有初始化，所以 table 为 null 。我们接着转入 resize 方法里面看看。
 
-resize 方法
+## resize 方法
 
 第一步，保存旧值。
 
@@ -123,7 +123,7 @@ DEFAULT_LOAD_FACTOR，0.75f，就是 0.75。
 
 然后结束初始化。回到我们的 putVal 方法。
 
-putVal 方法
+## putVal 方法
 
     if ((p = tab[i = (n - 1) & hash]) == null) {
         // 等会会讲
@@ -174,7 +174,7 @@ afterNodeInsertion(evict) ，空函数，无意义。
 
 这就是整个插入一个无冲突值的过程。
 
-第二个 put 方法
+## 第二个 put 方法
 
 接着是有冲突的 put ，前面都差不多。
 
@@ -215,7 +215,7 @@ afterNodeAccess(e) 为空函数。
 
 返回旧值。
 
-另一段代码
+## 另一段代码
 
 再进行 Debug 。
 
@@ -273,7 +273,7 @@ afterNodeAccess(e) 为空函数。
 
 我们插入了一对新的键值对，并且超过了阈值，需要进行扩容。
 
-resize 方法
+## resize 方法
 
     if (oldCap > 0) {
         if (oldCap >= MAXIMUM_CAPACITY) {
@@ -359,7 +359,7 @@ e.hash & oldCap ，当 e.hash 的二进制位数小于 oldCap 时，这个值为
         newTab[j + oldCap] = hiHead;
     }
 
-后记
+## 后记
 
 为了写这个前前后后 Debug 了很久，收获很大。建议有能力的同学一定要自己 Debug 一下。你看一下源码就会发现，这里面坑好多ORZ。后续有时间的话还会再写的。
 
