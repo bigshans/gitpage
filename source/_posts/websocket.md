@@ -23,7 +23,7 @@ Websocket 还是值得说一说的，我们是使用 node 开发的。
 
 只考虑两个库：socket.io 和 ws 。
 
-最终我选择的是 ws 。考虑两个因素，第一是 socket.io 低层并不是用 websocket ；第二是， 如果出用 socket.io 要考虑会话保持的问题。而且 socket.io 的效率并内有 ws 高。所以综上考虑，选择 ws 。
+最终我选择的是 ws 。考虑两个因素，第一是 socket.io 低层并不是用 websocket ；第二是， 如果出用 socket.io 要考虑会话保持的问题。而且 socket.io 的效率并没有 ws 高。所以综上考虑，选择 ws 。
 
 ## 浏览器 Websocket 和 ws 的差异
 
